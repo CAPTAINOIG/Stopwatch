@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="body">
-    <input type="number" placeholder="hh" id="hour">
-    <input type="number" placeholder="mm" id="minute">
-    <input type="number" placeholder="ss" id="second">
-    <button id="count" onclick="countDown()">STOPWATCH</button>
+    <input type="number" placeholder="00" id="hour">
+    <input type="number" placeholder="00" id="minute">
+    <input type="number" placeholder="00" id="second">
+    <button id="count" onclick="countDown()">START</button>
 
     <script>
-        hour.value =  24
+        hour.value  = 24
         minute.value = 59
         second.value = 59
         const countDown =()=>{
@@ -28,8 +28,8 @@
                 hour.value --
                 minute.value = 59
             }
-            if(hour.value == 0){
-                hour.value = 59
+            if(hour.value ==0){
+                hour.value = 24
                 minute.value = 59
                 second.value = 59
             }
