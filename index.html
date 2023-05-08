@@ -12,26 +12,36 @@
     <input type="number" placeholder="00" id="minute">
     <input type="number" placeholder="00" id="second">
     <button id="count" onclick="countDown()">START</button>
+    <!-- <button id="count" onclick="stop()">STOP</button> -->
 
     <script>
-        hour.value  = 24
-        minute.value = 59
-        second.value = 59
+        // hour.value  = hour.value
+        second.value =  second.value
+        minute.value = minute.value
+        // const stop =()=>{
+        //     alert("stop")}
         const countDown =()=>{
-            setTimeout(countDown, 1000)
+         let x=   setTimeout(countDown, 1000)
             second.value --
-            if(second.value == 0){
+            if(second.value == 0 && minute.value == 0 && hour.value==0){
+                minute.value++
+                clearTimeout(x)
+            }
+            if (second.value == 0){
                 minute.value --
+                // second.value = 59
+            }
+             if(second.value < 0){
+                
                 second.value = 59
             }
-            if(minute.value == 0){
-                hour.value --
-                minute.value = 59
-            }
-            if(hour.value ==0){
-                hour.value = 24
+            if(minute.value ==0 && hour.value!=0){
+                hour.value--
                 minute.value = 59
                 second.value = 59
+            } if(hour.value ==0 && minute.value ==0){
+                hour.value ==""
+                minute.value ==""
             }
         } 
 
